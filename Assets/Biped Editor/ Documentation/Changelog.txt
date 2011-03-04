@@ -1,0 +1,24 @@
+Changelist:
+
+1.03:
+	- Updated to latest library code
+	- Fixed a bug with default hand collider size for characters whose arms
+	are adducted in the bind pose
+
+1.02:
+	- Changed BipedInspector and BodyPartInspector classes to BipedEditor and
+	BodyPartEditor, respectively, since they no longer really use the inspector
+	- Explicitly typed some implicitly typed variables in JointHandle
+	- Latest library code
+	
+1.01:
+	- Fixed bug preventing transformation handles from rendering when BodyPart
+	or Biped was selected
+	- Removed y/z swapping in JointHandle since it is no longer necessary in
+	Unity 3.x and higher
+	- Fixed bug in JointHandle orientation
+	- Corrected Biped default joint limits to account for JointHandle
+	reorientation
+
+1.0:
+	- Biped Editor was released to the world!

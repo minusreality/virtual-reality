@@ -1,0 +1,45 @@
+Biped Editor
+version 1.03, December 24, 2010
+
+Copyright (C) Adam Mechtley 2010
+
+Following is a lot of formal language. Really, I can't keep you from stealing
+or improperly redistributing any of the code, but please don't be a jerk about
+it. I have a family and bills to pay. If you didn't actually buy this, modestly
+priced as it is, please consider at least making a donation for whatever you
+think it is worth: http://bit.ly/adammechtley_donate
+
+This software is provided 'as-is', without any express or implied warranty. In
+no event will the author be held liable for any damages arising from the use of
+this software.
+
+Permission is granted to the purchasing party to use or modify this software in
+any way for internal use only, across any number of projects. Purchasing party
+may not externally redistribute any of the herein contained source code, either
+altered or in its original form. The following further restrictions apply:
+
+1. The origin of this software must not be misrepresented; you must not claim
+that you wrote the original software. If you use this software in a product, an
+acknowledgment is not required, but is allowed.
+2. The original software author may, in any customer reference list or in any
+press release, use the name of products, individuals and companies using this
+software.
+3. This Agreement will be governed by the laws of the State of Wisconsin as
+they are applied to agreements between Wisconsin residents entered into and to
+be performed entirely within Wisconsin. The United Nations Convention on
+Contracts for the International Sale of Goods is specifically disclaimed.
+4. Whether you are licensing the Software as an individual or on behalf of
+an entity, you may not: (a) remove any proprietary notices or labels on the
+Software; (b) resell, lease, rent, transfer, sublicense, or otherwise transfer
+rights to the Software.
+5. You agree that this is the entire agreement between you and the original
+software creator, which supersedes any prior agreement, whether written or
+oral, and all other communications between the original software creator and
+you relating to the subject matter of this Agreement.
+6. No notices in the software, including comments or this file, may be removed
+or altered from any internal distribution.
+
+Any of these requirements may be waived for an additional fee. Contact the
+original software author for details.
+
+Adam Mechtley - adam@adammechtley.com
