@@ -1,0 +1,325 @@
+fileFormatVersion: 1
+guid: 336eec4897d968c41bef166b5e0a6aa0
+labels:
+- rig
+- charactercontroller
+- playablecharacter
+- mesh
+- rigged
+- 3D
+- model
+- character
+- animated
+- motion-capture
+- mo-cap
+- mocap
+- motion
+- animation
+- mixamo
+- zombie
+- undead
+- monster
+ModelImporter:
+  importerVersion: 7
+  meshes:
+    scaleFactor: 0.01
+    useFileUnits: 1
+    meshCompression: 0
+    generateColliders: 0
+    swapUVs: 0
+  tangentSpace:
+    normalImportMode: 0
+    tangentImportMode: 1
+    smoothingAngle: 60
+    splitTangents: 1
+  materials:
+    generation: 1
+  animations:
+    generation: 3
+    bakeAnimations: 0
+    animationCompression: 1
+    animationWrapMode: 0
+    splitAnimations: 0
+  nodeInfo:
+    Zombie:LeftHand:
+    - 100000
+    - 400000
+    Zombie:LeftArm:
+    - 100002
+    - 400002
+    Zombie:JawEND:
+    - 100004
+    - 400004
+    Zombie:Jaw:
+    - 100006
+    - 400006
+    Zombie:RightEye:
+    - 100008
+    - 400008
+    Zombie:LeftEye:
+    - 100010
+    - 400010
+    Zombie:Head:
+    - 100012
+    - 400012
+    Zombie:Neck1:
+    - 100014
+    - 400014
+    Zombie:Neck:
+    - 100016
+    - 400016
+    Zombie:Spine2:
+    - 100018
+    - 400018
+    Zombie:Spine1:
+    - 100020
+    - 400020
+    Zombie:Spine:
+    - 100022
+    - 400022
+    Zombie:Hips:
+    - 100024
+    - 400024
+    - 13700000
+    //RootNode:
+    - 100026
+    - 400026
+    - 11100000
+    Zombie_Geo:
+    - 100028
+    - 400028
+    Zombie:Zombie:LeftFootToeBase_End:
+    - 100030
+    - 400030
+    Zombie:Zombie:RightFootToeBase_End:
+    - 100032
+    - 400032
+    Zombie:LeftNostril:
+    - 100034
+    - 400034
+    Zombie:HeadTop_End:
+    - 100036
+    - 400036
+    Zombie:Zombie:RightUpLeg:
+    - 100038
+    - 400038
+    Zombie:LeftIOuterBrow:
+    - 100040
+    - 400040
+    Zombie:RightInnerBrow:
+    - 100042
+    - 400042
+    Zombie:LeftShoulder:
+    - 100044
+    - 400044
+    Zombie:RightLipLower:
+    - 100046
+    - 400046
+    Zombie:LeftInnerBrow:
+    - 100048
+    - 400048
+    Zombie:Zombie:RightHandPinky1:
+    - 100050
+    - 400050
+    Zombie:Zombie:RightLeg:
+    - 100052
+    - 400052
+    Zombie:LeftCheek:
+    - 100054
+    - 400054
+    Zombie:Zombie:RightHandThumb4:
+    - 100056
+    - 400056
+    Zombie:LeftLipLower:
+    - 100058
+    - 400058
+    Zombie:RightCheek:
+    - 100060
+    - 400060
+    Zombie:LeftEyelidLower:
+    - 100062
+    - 400062
+    Zombie:Zombie:LeftHandMiddle3:
+    - 100064
+    - 400064
+    Zombie:RightIOuterBrow:
+    - 100066
+    - 400066
+    Zombie:Zombie:RightHandIndex1:
+    - 100068
+    - 400068
+    Zombie:Zombie:LeftHandThumb3:
+    - 100070
+    - 400070
+    Zombie:RightEyelidUpper:
+    - 100072
+    - 400072
+    Zombie:Zombie:LeftHandMiddle1:
+    - 100074
+    - 400074
+    Zombie:Zombie:RightToeBase:
+    - 100076
+    - 400076
+    Zombie:TongueTip:
+    - 100078
+    - 400078
+    Zombie:RightLipUpper:
+    - 100080
+    - 400080
+    Zombie:Zombie:LeftHandMiddle2:
+    - 100082
+    - 400082
+    Zombie:LeftEyelidUpper:
+    - 100084
+    - 400084
+    Zombie:LeftForeArm:
+    - 100086
+    - 400086
+    Zombie:LeftLipUpper:
+    - 100088
+    - 400088
+    Zombie:RightNostril:
+    - 100090
+    - 400090
+    Zombie:RightEyelidLower:
+    - 100092
+    - 400092
+    Zombie:Zombie:LeftHandPinky1:
+    - 100094
+    - 400094
+    Zombie:TongueBack:
+    - 100096
+    - 400096
+    Zombie:Zombie:LeftHandRing4:
+    - 100098
+    - 400098
+    Zombie:Zombie:LeftHandThumb2:
+    - 100100
+    - 400100
+    Zombie:Zombie:LeftHandThumb4:
+    - 100102
+    - 400102
+    Zombie:LeftLipCorner:
+    - 100104
+    - 400104
+    Zombie:Zombie:LeftHandThumb1:
+    - 100106
+    - 400106
+    Zombie:RightLipCorner:
+    - 100108
+    - 400108
+    Zombie:Zombie:RightHandThumb1:
+    - 100110
+    - 400110
+    Zombie:Zombie:LeftHandRing3:
+    - 100112
+    - 400112
+    Zombie:Zombie:RightHand:
+    - 100114
+    - 400114
+    Zombie:Zombie:LeftHandRing1:
+    - 100116
+    - 400116
+    Zombie:Zombie:LeftHandRing2:
+    - 100118
+    - 400118
+    Zombie:Zombie:LeftHandPinky3:
+    - 100120
+    - 400120
+    Zombie:Zombie:LeftHandIndex4:
+    - 100122
+    - 400122
+    Zombie:Zombie:LeftHandPinky2:
+    - 100124
+    - 400124
+    Zombie:Zombie:RightShoulder:
+    - 100126
+    - 400126
+    Zombie:Zombie:RightArm:
+    - 100128
+    - 400128
+    Zombie:Zombie:RightHandThumb3:
+    - 100130
+    - 400130
+    Zombie:Zombie:LeftHandPinky4:
+    - 100132
+    - 400132
+    Zombie:Zombie:RightHandThumb2:
+    - 100134
+    - 400134
+    Zombie:Zombie:RightHandPinky2:
+    - 100136
+    - 400136
+    Zombie:Zombie:RightHandMiddle2:
+    - 100138
+    - 400138
+    Zombie:Zombie:RightHandPinky4:
+    - 100140
+    - 400140
+    Zombie:Zombie:RightFoot:
+    - 100142
+    - 400142
+    Zombie:Zombie:RightHandIndex3:
+    - 100144
+    - 400144
+    Zombie:Zombie:RightHandRing2:
+    - 100146
+    - 400146
+    Zombie:Zombie:RightHandRing3:
+    - 100148
+    - 400148
+    Zombie:Zombie:RightHandMiddle4:
+    - 100150
+    - 400150
+    Zombie:Zombie:RightHandRing1:
+    - 100152
+    - 400152
+    Zombie:Zombie:LeftLeg:
+    - 100154
+    - 400154
+    Zombie:Zombie:RightHandMiddle3:
+    - 100156
+    - 400156
+    Zombie:Zombie:LeftToeBase:
+    - 100158
+    - 400158
+    Zombie:Zombie:LeftUpLeg:
+    - 100160
+    - 400160
+    Zombie:Zombie:RightHandMiddle1:
+    - 100162
+    - 400162
+    Zombie:Zombie:LeftHandMiddle4:
+    - 100164
+    - 400164
+    Zombie:Zombie:RightForeArm:
+    - 100166
+    - 400166
+    Zombie:Zombie:LeftHandIndex2:
+    - 100168
+    - 400168
+    Zombie:Zombie:LeftHandIndex1:
+    - 100170
+    - 400170
+    Zombie:Zombie:LeftFoot:
+    - 100172
+    - 400172
+    Zombie:Zombie:LeftHandIndex3:
+    - 100174
+    - 400174
+    Zombie:Zombie:RightHandIndex4:
+    - 100176
+    - 400176
+    Zombie:Zombie:RightHandRing4:
+    - 100178
+    - 400178
+    Zombie:Zombie:RightHandPinky3:
+    - 100180
+    - 400180
+    Zombie:Zombie:RightHandIndex2:
+    - 100182
+    - 400182
+AssetImporter:
+  importerVersion: 1
+  fileIDToRecycleName:
+    4300000: Zombie_Geo

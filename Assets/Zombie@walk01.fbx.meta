@@ -1,0 +1,150 @@
+fileFormatVersion: 1
+guid: 840e249671a143b49bf0871db7b70dec
+ModelImporter:
+  importerVersion: 7
+  meshes:
+    scaleFactor: 0.01
+    useFileUnits: 1
+    meshCompression: 0
+    generateColliders: 0
+    swapUVs: 0
+  tangentSpace:
+    normalImportMode: 0
+    tangentImportMode: 1
+    smoothingAngle: 60
+    splitTangents: 1
+  materials:
+    generation: 1
+  animations:
+    generation: 3
+    bakeAnimations: 0
+    animationCompression: 0
+    animationWrapMode: 0
+    splitAnimations: 0
+  nodeInfo:
+    //RootNode:
+    - 100000
+    - 400000
+    - 11100000
+    Null:
+    - 100002
+    - 400002
+    RightToeBase:
+    - 100004
+    - 400004
+    RightFoot:
+    - 100006
+    - 400006
+    RightLeg:
+    - 100008
+    - 400008
+    RightUpLeg:
+    - 100010
+    - 400010
+    LeftToeBase:
+    - 100012
+    - 400012
+    LeftFoot:
+    - 100014
+    - 400014
+    LeftLeg:
+    - 100016
+    - 400016
+    LeftUpLeg:
+    - 100018
+    - 400018
+    RightHandIndex2:
+    - 100020
+    - 400020
+    RightHandIndex1:
+    - 100022
+    - 400022
+    RightHandThumb1:
+    - 100024
+    - 400024
+    RightHand:
+    - 100026
+    - 400026
+    RightForeArm:
+    - 100028
+    - 400028
+    RightArm:
+    - 100030
+    - 400030
+    RightShoulder:
+    - 100032
+    - 400032
+    LeftHandIndex2:
+    - 100034
+    - 400034
+    LeftHandIndex1:
+    - 100036
+    - 400036
+    LeftHandThumb1:
+    - 100038
+    - 400038
+    LeftInHandThumb:
+    - 100040
+    - 400040
+    LeftHand:
+    - 100042
+    - 400042
+    LeftForeArm:
+    - 100044
+    - 400044
+    LeftArm:
+    - 100046
+    - 400046
+    LeftShoulder:
+    - 100048
+    - 400048
+    HeadTop_End:
+    - 100050
+    - 400050
+    Head:
+    - 100052
+    - 400052
+    Neck1:
+    - 100054
+    - 400054
+    Neck:
+    - 100056
+    - 400056
+    Spine2:
+    - 100058
+    - 400058
+    Spine1:
+    - 100060
+    - 400060
+    Spine:
+    - 100062
+    - 400062
+    Hips:
+    - 100064
+    - 400064
+    RightInHandThumb:
+    - 100066
+    - 400066
+    RightHandIndex3_End:
+    - 100068
+    - 400068
+    RightFootToeBase_End:
+    - 100070
+    - 400070
+    LeftFootToeBase_End:
+    - 100072
+    - 400072
+    RightHandThumb2_End:
+    - 100074
+    - 400074
+    LeftHandThumb2_End:
+    - 100076
+    - 400076
+    LeftHandIndex3_End:
+    - 100078
+    - 400078
+AssetImporter:
+  importerVersion: 1
+  fileIDToRecycleName:
+    7400000: mixamo.com //// Zed@walk01 (2)
+    7400002: mixamo.com //// Zombie@walk01

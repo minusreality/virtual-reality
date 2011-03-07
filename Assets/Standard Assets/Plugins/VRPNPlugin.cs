@@ -40,6 +40,7 @@ public class VRPNPlugin : MonoBehaviour
 	public GameObject rightFoot;*/
 	public GameObject gun;
 	public CharacterController charController;
+	private Vector3 moveDirection = Vector3.zero;
 	
 	void Loop()
 	{
@@ -78,7 +79,8 @@ public class VRPNPlugin : MonoBehaviour
 		pos.y = PosY(0)*2+basePos.y;
 		pos.z = -PosZ(0)*2+basePos.z;
 		//cam.transform.position = pos; // This will move through walls
-		charController.Move(pos);
+		//moveDirection = transform.TransformDirection(pos);
+		charController.Move(pos - cam.transform.position);
 		
 		ori.x  = OriX(0);
 		ori.y  = OriY(0);
@@ -128,6 +130,7 @@ public class VRPNPlugin : MonoBehaviour
     {
     	// TODO: If you can't connect to VRPN within x seconds then activate keyboard and mouse control
         VRPNStartup();
+
 		PhysicalSpace = GameObject.Find("PhysicalSpace");
 		basePos = PhysicalSpace.transform.position;
 		basePos.y -= PhysicalSpace.transform.lossyScale.y / 2;

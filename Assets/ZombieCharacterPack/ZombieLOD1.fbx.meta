@@ -1,0 +1,325 @@
+fileFormatVersion: 1
+guid: a7ee895875a7aa94483082fac438bb20
+labels:
+- rig
+- charactercontroller
+- playablecharacter
+- mesh
+- rigged
+- 3D
+- model
+- character
+- animated
+- motion-capture
+- mo-cap
+- mocap
+- motion
+- animation
+- mixamo
+- zombie
+- undead
+- monster
+ModelImporter:
+  importerVersion: 7
+  meshes:
+    scaleFactor: 0.01
+    useFileUnits: 1
+    meshCompression: 0
+    generateColliders: 0
+    swapUVs: 0
+  tangentSpace:
+    normalImportMode: 0
+    tangentImportMode: 1
+    smoothingAngle: 60
+    splitTangents: 1
+  materials:
+    generation: 1
+  animations:
+    generation: 3
+    bakeAnimations: 0
+    animationCompression: 1
+    animationWrapMode: 0
+    splitAnimations: 1
+  nodeInfo:
+    RightToeBase:
+    - 100000
+    - 400000
+    RightFoot:
+    - 100002
+    - 400002
+    RightLeg:
+    - 100004
+    - 400004
+    RightUpLeg:
+    - 100006
+    - 400006
+    LeftToeBase:
+    - 100008
+    - 400008
+    LeftFoot:
+    - 100010
+    - 400010
+    LeftLeg:
+    - 100012
+    - 400012
+    LeftUpLeg:
+    - 100014
+    - 400014
+    RightHandPinky4:
+    - 100016
+    - 400016
+    RightHandPinky3:
+    - 100018
+    - 400018
+    RightHandPinky2:
+    - 100020
+    - 400020
+    RightHandPinky1:
+    - 100022
+    - 400022
+    RightHandRing4:
+    - 100024
+    - 400024
+    RightHandRing3:
+    - 100026
+    - 400026
+    RightHandRing2:
+    - 100028
+    - 400028
+    RightHandRing1:
+    - 100030
+    - 400030
+    RightHandIndex4:
+    - 100032
+    - 400032
+    RightHandIndex3:
+    - 100034
+    - 400034
+    zombie_geo_low:
+    - 100036
+    - 400036
+    //RootNode:
+    - 100038
+    - 400038
+    - 11100000
+    RightHandIndex2:
+    - 100040
+    - 400040
+    RightHandIndex1:
+    - 100042
+    - 400042
+    RightHandThumb4:
+    - 100044
+    - 400044
+    RightHandThumb3:
+    - 100046
+    - 400046
+    RightHandThumb2:
+    - 100048
+    - 400048
+    RightHandThumb1:
+    - 100050
+    - 400050
+    RightHand:
+    - 100052
+    - 400052
+    RightForeArm:
+    - 100054
+    - 400054
+    RightArm:
+    - 100056
+    - 400056
+    RightShoulder:
+    - 100058
+    - 400058
+    LeftHandPinky4:
+    - 100060
+    - 400060
+    LeftHandPinky3:
+    - 100062
+    - 400062
+    LeftHandPinky2:
+    - 100064
+    - 400064
+    LeftHandPinky1:
+    - 100066
+    - 400066
+    LeftHandRing4:
+    - 100068
+    - 400068
+    LeftHandRing3:
+    - 100070
+    - 400070
+    LeftHandRing2:
+    - 100072
+    - 400072
+    LeftHandRing1:
+    - 100074
+    - 400074
+    LeftHandIndex4:
+    - 100076
+    - 400076
+    LeftHandIndex3:
+    - 100078
+    - 400078
+    LeftHandIndex2:
+    - 100080
+    - 400080
+    LeftHandIndex1:
+    - 100082
+    - 400082
+    LeftHandMiddle4:
+    - 100084
+    - 400084
+    LeftHandMiddle3:
+    - 100086
+    - 400086
+    LeftHandMiddle2:
+    - 100088
+    - 400088
+    LeftHandMiddle1:
+    - 100090
+    - 400090
+    LeftHandThumb4:
+    - 100092
+    - 400092
+    LeftHandThumb3:
+    - 100094
+    - 400094
+    LeftHandThumb2:
+    - 100096
+    - 400096
+    LeftHandThumb1:
+    - 100098
+    - 400098
+    LeftHand:
+    - 100100
+    - 400100
+    LeftForeArm:
+    - 100102
+    - 400102
+    LeftArm:
+    - 100104
+    - 400104
+    LeftShoulder:
+    - 100106
+    - 400106
+    RightNostril:
+    - 100108
+    - 400108
+    RightCheek:
+    - 100110
+    - 400110
+    RightIOuterBrow:
+    - 100112
+    - 400112
+    RightInnerBrow:
+    - 100114
+    - 400114
+    LeftIOuterBrow:
+    - 100116
+    - 400116
+    LeftInnerBrow:
+    - 100118
+    - 400118
+    LeftEyelidUpper:
+    - 100120
+    - 400120
+    LeftEyelidLower:
+    - 100122
+    - 400122
+    LeftCheek:
+    - 100124
+    - 400124
+    LeftNostril:
+    - 100126
+    - 400126
+    LeftLipUpper:
+    - 100128
+    - 400128
+    LeftLipCorner:
+    - 100130
+    - 400130
+    RightLipCorner:
+    - 100132
+    - 400132
+    RightLipLower:
+    - 100134
+    - 400134
+    JawEND:
+    - 100136
+    - 400136
+    LeftLipLower:
+    - 100138
+    - 400138
+    TongueTip:
+    - 100140
+    - 400140
+    TongueBack:
+    - 100142
+    - 400142
+    Jaw:
+    - 100144
+    - 400144
+    RightEye:
+    - 100146
+    - 400146
+    LeftEye:
+    - 100148
+    - 400148
+    HeadTop_End:
+    - 100150
+    - 400150
+    Head:
+    - 100152
+    - 400152
+    Neck1:
+    - 100154
+    - 400154
+    Neck:
+    - 100156
+    - 400156
+    Spine2:
+    - 100158
+    - 400158
+    Spine1:
+    - 100160
+    - 400160
+    Spine:
+    - 100162
+    - 400162
+    Hips:
+    - 100164
+    - 400164
+    - 13700000
+    RightHandMiddle2:
+    - 100166
+    - 400166
+    prefix_RightLipUpper:
+    - 100168
+    - 400168
+    RightEyelidUpper:
+    - 100170
+    - 400170
+    RightHandMiddle1:
+    - 100172
+    - 400172
+    RightEyelidLower:
+    - 100174
+    - 400174
+    RightHandMiddle3:
+    - 100176
+    - 400176
+    RightFootToeBase_End:
+    - 100178
+    - 400178
+    RightHandMiddle4:
+    - 100180
+    - 400180
+    LeftFootToeBase_End:
+    - 100182
+    - 400182
+AssetImporter:
+  importerVersion: 1
+  fileIDToRecycleName:
+    4300000: zombie_geo_low
