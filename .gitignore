@@ -1,0 +1,7 @@
+# Ignore everything
+Library/*
+*.DS_Store
+
+# But not these files...
+!Library/*.asset
+
