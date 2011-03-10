@@ -127,13 +127,14 @@ public class RootMotionCharacterControlZOMBIE: MonoBehaviour
 	
 	public IEnumerator WasHit (float damage) {		
 		print ("ouch: " + damage);
-		GetComponent<SteerForPursuit>().enabled = false;
+		GetComponent<AIFollow>().enabled = false;
 		animation.CrossFade("standup", 0.3f);
-		yield return new WaitForSeconds(animation["standup"].clip.length);
-		Walk();
+		yield return new WaitForSeconds(animation["standup"].clip.length + 0.3f);
+		//Walk();
 		//animation.CrossFade("walk02",0.5f);
 		//yield return new WaitForSeconds(animation["walk01"].clip.length);
-		GetComponent<SteerForPursuit>().enabled = true;
+		GetComponent<AIFollow>().enabled = true;
+
 		
 		
 		// Disable animation

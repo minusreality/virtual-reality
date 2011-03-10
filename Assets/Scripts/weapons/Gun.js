@@ -459,6 +459,7 @@ class Gun extends MonoBehaviour
 		
 		// Send a message that it was hit
 		if (hit.collider.gameObject.transform.root.tag == "zombie"){			
+			Debug.Log("hit a zombie!");
 			hit.collider.gameObject.transform.root.SendMessage("WasHit", 5.0);//, direction.normalized * pushPower, hit.point);		
 		}
 		

@@ -6,17 +6,17 @@ ModelImporter:
     scaleFactor: 1
     useFileUnits: 1
     meshCompression: 0
-    generateColliders: 0
+    generateColliders: 1
     swapUVs: 0
   tangentSpace:
     normalImportMode: 0
-    tangentImportMode: 2
+    tangentImportMode: 1
     smoothingAngle: 60
     splitTangents: 0
   materials:
     generation: 1
   animations:
-    generation: 0
+    generation: 1
     bakeAnimations: 0
     animationCompression: 1
     animationWrapMode: 0
@@ -25,12 +25,12 @@ ModelImporter:
     //RootNode:
     - 100000
     - 400000
+    - 11100000
     - 3300000
     - 2300000
+    - 6400000
 AssetImporter:
   importerVersion: 1
   fileIDToRecycleName:
     4300000: pPlane1
     4300002: nurbsToPoly1
-    4300004: pCylinder1
-    4300006: waterPlaneMesh
