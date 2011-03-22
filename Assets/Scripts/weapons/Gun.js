@@ -549,7 +549,7 @@ class Gun extends MonoBehaviour
 	{
 		timerToCreateDecal -= Time.deltaTime;
 		
-		if(Input.GetKeyDown(KeyCode.F) && currentRounds == 0 && !reloading && freeToShoot)
+		if(Input.GetButton("Fire1") && currentRounds == 0 && !reloading && freeToShoot)
 		{
 			PlayOutOfAmmoSound();
 		}

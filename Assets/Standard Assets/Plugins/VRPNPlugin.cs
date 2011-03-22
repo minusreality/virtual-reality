@@ -34,95 +34,105 @@ public class VRPNPlugin : MonoBehaviour
     private static extern float VRPNOrientW(int n);
 
 	public GameObject cam;
+	public GameObject gun;	
 	public GameObject PhysicalSpace;
-	public Vector3 basePos;
-	/*public GameObject leftFoot;
-	public GameObject rightFoot;*/
-	public GameObject gun;
-	public CharacterController charController;
-	private Vector3 moveDirection = Vector3.zero;
-	
-	void Loop()
-	{
-	}
+	public GameObject MoveDirection;
+	public CharacterController charController;	
 
+	public Vector3 basePos;
+	public Vector3 runDirection;
+	public Quaternion baseOri;
+	
+	public float YOffset = 0;
+	public float YatLastFrame = 0;	
+	public float runSpeed = 0;
+	
+	private bool freshKeyDown = true;
+	private Vector3 rotationPoint;
+	
 	void Update()
 	{
 		VRPNTick();
-		/*VRPNTick();
-		VRPNTick();
-		VRPNTick();*/
-		//Debug.Log(PosX(0));
-		
-		//cam = GameObject.Find("Main Camera");
-		
+								
 		// Get current HMD position and orientation
 		Vector3 pos = cam.transform.position;
 		Quaternion ori = cam.transform.rotation;
-		
-		// Get current foot position and orientation
-		/*Vector3 leftFootPos = leftFoot.transform.position;
-		Quaternion leftFootOri = leftFoot.transform.rotation;
-		Vector3 rightFootPos = rightFoot.transform.position;
-		Quaternion rightFootOri = rightFoot.transform.rotation;*/
-		
+		Vector3 rot = Vector3.zero;
+				
 		// Get current gun position and orientation
 		Vector3 gunPos = gun.transform.position;
 		Quaternion gunOri = gun.transform.rotation;
 		
 		// Trackables move relative to PhysicalSpace's floor which moves relative to the character controller
 		basePos = PhysicalSpace.transform.position;
-		basePos.y -= PhysicalSpace.transform.lossyScale.y / 2;
+		baseOri = PhysicalSpace.transform.rotation;
+		basePos.y -= PhysicalSpace.transform.lossyScale.y / 2; // set the floor as the base Y position, not the center
 		
-		// Move/Orient head
+		// Set values for moving/orienting head
 		pos.x = PosX(0)*2+basePos.x;
 		pos.y = PosY(0)*2+basePos.y;
-		pos.z = -PosZ(0)*2+basePos.z;
-		//cam.transform.position = pos; // This will move through walls
-		//moveDirection = transform.TransformDirection(pos);
-		charController.Move(pos - cam.transform.position);
+		pos.z = -PosZ(0)*2+basePos.z;		
 		
-		ori.x  = OriX(0);
-		ori.y  = OriY(0);
+		ori.x  = OriX(0);						
+		ori.y  = OriY(0);		
 		ori.z  = -OriZ(0); 
-		ori.w = -OriW(0); 
-		cam.transform.rotation = ori;
-		//transform.localRotation = ori;
+		ori.w = -OriW(0); 		
+
+		// Get resulting euler angles
+		rot = ori.eulerAngles;
 		
-		// Move/Orient left foot
-		/*leftFootPos.x = PosX(1)*2+basePos.x;
-		leftFootPos.y = PosY(1)*2+basePos.y;
-		leftFootPos.z = -PosZ(1)*2+basePos.z;
-		leftFoot.transform.position = leftFootPos;
+		// Set the move direction		
+		MoveDirection.transform.rotation = Quaternion.Euler(0, rot.y, 0);
 		
-		leftFootOri.x  = OriX(1);
-		leftFootOri.y  = OriY(1);
-		leftFootOri.z  = -OriZ(1);
-		leftFootOri.w = -OriW(1);
-		leftFoot.transform.rotation = leftFootOri;
+		// Rotate faster
+		if (Input.GetButton("Fire2")) {
+			//YOffset += (rot.y - YatLastFrame);			
+			runSpeed = Math.Abs(YatLastFrame - pos.y);
+			PhysicalSpace.transform.position += MoveDirection.transform.forward * runSpeed * 5;			
+			/*if (freshKeyDown) {
+				freshKeyDown = false;				 				
+			}*/
+			
+			// Adjust physical space depending on rotation
+			// This would move the camera and gun but this gets undone because the cam and gun are positioned in world coordinates/rotation afterwards
+			// The camera should rotate twice as fast, but the physical space should rotate in the opposite direction at the same rate		
+			//PhysicalSpace.transform.RotateAround(rotationPoint, Vector3.up, ((rot.y + (YOffset))*-1) - baseOri.eulerAngles.y ); // right direction, too fast
+			//PhysicalSpace.transform.RotateAround(rotationPoint, Vector3.up,(rot.y + (YOffset)) - baseOri.eulerAngles.y);  // wrong direction, right speed
+			//PhysicalSpace.transform.RotateAround(rotationPoint, Vector3.up, ((rot.y + (YOffset))*-1) + baseOri.eulerAngles.y ); // wtf
+			
+		} else {
+			//freshKeyDown = true; 
+			runSpeed = 0;
+		}
 		
-		// Move/Orient right foot
-		rightFootPos.x = PosX(2)*2+basePos.x;
-		rightFootPos.y = PosY(2)*2+basePos.y;
-		rightFootPos.z = -PosZ(2)*2+basePos.z;
-		rightFoot.transform.position = rightFootPos;
+		// TODO: Align the physical space with it's starting coordinates to correct for rotation errors
 		
-		rightFootOri.x  = OriX(2);
-		rightFootOri.y  = OriY(2);
-		rightFootOri.z  = -OriZ(2);
-		rightFootOri.w = -OriW(2);
-		rightFoot.transform.rotation = rightFootOri;*/
+		YatLastFrame = pos.y;
+		//rot.y += YOffset;	
 		
+		// Set the camera's position
+		// This will actually use world coordinates from the tracker so is not relative to the physical space			
+		//cam.transform.position = pos; // This will move through walls
+		charController.Move(pos - cam.transform.position); // This will not move through walls
+		// TODO: if the camera doesnt move then set the walkable area back to it's last position when it did move
+					
+		// Set the camera's orientation
+		// This will actually use world coordinates from the tracker so is not relative to the physical space
+		cam.transform.rotation = ori; // This does not support adjusting the orientation of the volume		
+		//cam.transform.eulerAngles = rot;
+				
 		// Move/Orient gun
+		// This will actually use world coordinates from the tracker so is not relative to the physical space
 		gunPos.x = PosX(3)*2+basePos.x;
 		gunPos.y = PosY(3)*2+basePos.y;
 		gunPos.z = -PosZ(3)*2+basePos.z;
-		gun.transform.position = gunPos;		
+		gun.transform.position = gunPos; // Moves through walls	
 		
+		// This will actually use world coordinates from the tracker so is not relative to the physical space
 		gunOri.x  = OriX(3);
 		gunOri.y  = OriY(3);
-		gunOri.z  = -OriZ(3); // was -
-		gunOri.w = -OriW(3); // was -
+		gunOri.z  = -OriZ(3); 
+		gunOri.w = -OriW(3);
 		gun.transform.rotation = gunOri;
 	}
 
@@ -132,18 +142,17 @@ public class VRPNPlugin : MonoBehaviour
         VRPNStartup();
 
 		PhysicalSpace = GameObject.Find("PhysicalSpace");
+		MoveDirection = GameObject.Find("MoveDirection");
 		basePos = PhysicalSpace.transform.position;
 		basePos.y -= PhysicalSpace.transform.lossyScale.y / 2;
 		cam = GameObject.Find("Main Camera");				
 		charController = cam.GetComponent<CharacterController>();
-		/*leftFoot = GameObject.Find("LeftFoot");
-		rightFoot = GameObject.Find("RightFoot");*/
 		gun = GameObject.Find("M4");
     }
 	
     void Tick()
     {
-        VRPNTick();
+        //VRPNTick();
     }
 	
     float PosX(int n)

@@ -35,6 +35,10 @@ public class MouseLook : MonoBehaviour {
 
 	void Update ()
 	{
+		if(Input.GetKeyDown(KeyCode.M))
+		{
+			enabled = false;
+		} else {
 		if (axes == RotationAxes.MouseXAndY)
 		{
 			// Read the mouse input axis
@@ -64,6 +68,7 @@ public class MouseLook : MonoBehaviour {
 
 			Quaternion yQuaternion = Quaternion.AxisAngle (Vector3.left, Mathf.Deg2Rad * rotationY);
 			transform.localRotation = originalRotation * yQuaternion;
+		}
 		}
 	}
 	
