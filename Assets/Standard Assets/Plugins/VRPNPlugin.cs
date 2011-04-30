@@ -58,6 +58,8 @@ public class VRPNPlugin : MonoBehaviour
 		Vector3 pos = cam.transform.position;
 		Quaternion ori = cam.transform.rotation;
 		Vector3 rot = Vector3.zero;
+		Vector3 temp = Vector3.zero;
+		Vector3 camOffset = Vector3.zero;
 				
 		// Get current gun position and orientation
 		Vector3 gunPos = gun.transform.position;
@@ -84,14 +86,42 @@ public class VRPNPlugin : MonoBehaviour
 		// Set the move direction		
 		MoveDirection.transform.rotation = Quaternion.Euler(0, rot.y, 0);
 		
-		// Rotate faster
+		// Run
 		if (Input.GetButton("Fire2")) {
 			//YOffset += (rot.y - YatLastFrame);			
 			runSpeed = Math.Abs(YatLastFrame - pos.y);
-			PhysicalSpace.transform.position += MoveDirection.transform.forward * runSpeed * 5;			
+			
+			// Get the camera's offset from physical space
+			// Move camera in the direction that you would have moved the physical space.
+			// Record camera's world position after moving
+			// Set the physical space's position to the camera's position (plus offset)
+			// Reset the camera to it's position as recorded before moving physical space
+			
+			// Store the camera's offset from PhysicalSpace
+			//camOffset = cam.transform.localPosition;
+			camOffset = cam.transform.position - PhysicalSpace.transform.position;
+						
+			// Move the camera in the run direction
+			//charController.Move( charController.transform.position);// + (MoveDirection.transform.forward * runSpeed * 5) );
+			charController.Move( MoveDirection.transform.forward * runSpeed * 5 );
+			temp = cam.transform.position;
+			
+			// Set the physical space to the cameras location factoring in the offset of the camera within the physical space.			
+		    PhysicalSpace.transform.position = cam.transform.position - camOffset; // blown to space
+			//PhysicalSpace.transform.position = camOffset - cam.transform.position; //slightly off
+			//PhysicalSpace.transform.position = camOffset + cam.transform.position; // blown to space
+			
+			// Reset the camera to it's position as recorded before moving physical space
+			cam.transform.position = temp;
+			
+			// Move the physical space directly
+			// PhysicalSpace.transform.position += MoveDirection.transform.forward * runSpeed * 5;			
+			
 			/*if (freshKeyDown) {
 				freshKeyDown = false;				 				
 			}*/
+			
+			
 			
 			// Adjust physical space depending on rotation
 			// This would move the camera and gun but this gets undone because the cam and gun are positioned in world coordinates/rotation afterwards
@@ -113,7 +143,7 @@ public class VRPNPlugin : MonoBehaviour
 		// Set the camera's position
 		// This will actually use world coordinates from the tracker so is not relative to the physical space			
 		//cam.transform.position = pos; // This will move through walls
-		charController.Move(pos - cam.transform.position); // This will not move through walls
+	    charController.Move(pos - cam.transform.position); // This will not move through walls
 		// TODO: if the camera doesnt move then set the walkable area back to it's last position when it did move
 					
 		// Set the camera's orientation
