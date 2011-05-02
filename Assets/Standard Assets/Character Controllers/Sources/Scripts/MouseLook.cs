@@ -90,7 +90,7 @@ public class MouseLook : MonoBehaviour {
 			enabled = false;			
 		} else {
 			Debug.Log("VRPN is not enabled. Keeping mouse look active");
-		}
+		}		
 	}
 	
 	public static float ClampAngle (float angle, float min, float max)

@@ -549,7 +549,7 @@ class Gun extends MonoBehaviour
 	{
 		timerToCreateDecal -= Time.deltaTime;
 		
-		if(Input.GetButton("Fire1") && currentRounds == 0 && !reloading && freeToShoot)
+		if(Input.GetKeyDown(KeyCode.F) && currentRounds == 0 && !reloading && freeToShoot)
 		{
 			PlayOutOfAmmoSound();
 		}
@@ -563,7 +563,10 @@ class Gun extends MonoBehaviour
 		
 		if(Input.GetKeyDown(KeyCode.L))
 		{
-			shotLight.enabled = false;
+			if (shotLight.enabled == true)
+				shotLight.enabled = false;
+			else
+				shotLight.enabled = false;
 		}
 		
 		HandleReloading();
