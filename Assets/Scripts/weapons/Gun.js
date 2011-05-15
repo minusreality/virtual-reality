@@ -556,9 +556,11 @@ class Gun extends MonoBehaviour
 		
 		if(Input.GetKeyDown(KeyCode.F))
 		{
-			freeToShoot = true;
+			Debug.Log("Sending shootSemi command");
+			networkView.RPC ("shootSemi", RPCMode.All);
+			/*freeToShoot = true;
 			cBurst = burstRate;
-			fire = true;
+			fire = true;*/
 		}
 		
 		if(Input.GetKeyDown(KeyCode.L))
@@ -572,6 +574,14 @@ class Gun extends MonoBehaviour
 		HandleReloading();
 		
 		ShotTheTarget();
+	}
+	
+	@RPC function shootSemi()
+	{
+		Debug.Log("Received network notification to shoot in semi mode");
+		freeToShoot = true;
+	    cBurst = burstRate;
+		fire = true;
 	}
 	
 	function HandleReloading()

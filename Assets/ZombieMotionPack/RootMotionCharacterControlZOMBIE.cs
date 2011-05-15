@@ -129,11 +129,14 @@ public class RootMotionCharacterControlZOMBIE: MonoBehaviour
 		print ("ouch: " + damage);
 		GetComponent<AIFollow>().enabled = false;
 		animation.CrossFade("standup", 0.3f);
-		yield return new WaitForSeconds(animation["standup"].clip.length + 0.3f);
+		yield return new WaitForSeconds(1f);
+		
+		Die();
+		
 		//Walk();
 		//animation.CrossFade("walk02",0.5f);
 		//yield return new WaitForSeconds(animation["walk01"].clip.length);
-		GetComponent<AIFollow>().enabled = true;
+		//GetComponent<AIFollow>().enabled = true;
 
 		
 		
@@ -154,5 +157,11 @@ public class RootMotionCharacterControlZOMBIE: MonoBehaviour
 		foreach ( Rigidbody rb in rbs ) {
 			rb.isKinematic = false; 
 		}*/
+	}
+	
+	private void Die() {
+		var overlordScript = GameObject.Find("ZombieOverlord").GetComponent<ZombieOverlordScript>();
+		overlordScript.deadZombie();
+		Destroy (gameObject);
 	}
 }

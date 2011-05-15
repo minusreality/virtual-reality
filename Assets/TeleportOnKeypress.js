@@ -9,6 +9,7 @@ function Update() {
     	 	(victim.transform.position.z >= boundary.bounds.min.z && victim.transform.position.z <= boundary.bounds.max.z))
 		{*/
 			if (levelToLoad >= 0) {
+				Debug.Log("Loading level: " + levelToLoad);
 				LoadLevel(levelToLoad);
 			}
 			Debug.Log("Within portal collider");
@@ -35,6 +36,12 @@ function LoadLevel(levelToLoad : int) {
 	yield WaitForSeconds (audio.clip.length);*/
 	GetComponent(AudioSource).Play();
 	yield WaitForSeconds (GetComponent(AudioSource).clip.length);
+	
+	// disable vrpn updates
+	vrpn = GameObject.Find("Optitrack").GetComponent("VRPNPlugin");	
+	vrpn.paused = true;
+	Debug.Log("VRPN updates paused");
+	
 	Application.LoadLevel(level);
 
 }

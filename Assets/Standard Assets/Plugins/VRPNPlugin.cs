@@ -46,12 +46,18 @@ public class VRPNPlugin : MonoBehaviour
 	public float YOffset = 0;
 	public float YatLastFrame = 0;	
 	public float runSpeed = 0;
+	public bool paused = false;
 	
 	private bool freshKeyDown = true;
 	private Vector3 rotationPoint;
 	
+	void Awake() {
+		DontDestroyOnLoad(transform.gameObject);
+	}
+
 	void Update()
 	{
+	   if (!paused) {
 		VRPNTick();
 								
 		// Get current HMD position and orientation
@@ -103,11 +109,12 @@ public class VRPNPlugin : MonoBehaviour
 						
 			// Move the camera in the run direction
 			//charController.Move( charController.transform.position);// + (MoveDirection.transform.forward * runSpeed * 5) );
-			charController.Move( MoveDirection.transform.forward * runSpeed * 5 );
+			charController.Move( MoveDirection.transform.forward * runSpeed * 15 );
 			temp = cam.transform.position;
 			
 			// Set the physical space to the cameras location factoring in the offset of the camera within the physical space.			
 		    PhysicalSpace.transform.position = cam.transform.position - camOffset; // blown to space
+		    //TODO: FORCE NETWORK UPDATE
 			//PhysicalSpace.transform.position = camOffset - cam.transform.position; //slightly off
 			//PhysicalSpace.transform.position = camOffset + cam.transform.position; // blown to space
 			
@@ -164,20 +171,45 @@ public class VRPNPlugin : MonoBehaviour
 		gunOri.z  = -OriZ(3); 
 		gunOri.w = -OriW(3);
 		gun.transform.rotation = gunOri;
+	   }
 	}
 
     void Start()
     {
-    	// TODO: If you can't connect to VRPN within x seconds then activate keyboard and mouse control
         VRPNStartup();
-
+        DontDestroyOnLoad(transform.gameObject);
+		LoadSceneObjects();
+    }
+    
+    // Must reload scene objects when scene changes or the references will be to orphans
+    void OnLevelWasLoaded()
+    {
+    	LoadSceneObjects();    	
+    	paused = false;
+    	Debug.Log("Level load complete. VRPN updates unpaused.");    	
+		
+		// TODO: fix this ugly hack that makes the gun visible on scene load	
+		/*Vector3 temp = Vector3.zero;
+		Vector3 camOffset = Vector3.zero;			
+		camOffset = cam.transform.position - PhysicalSpace.transform.position;
+		charController.Move( MoveDirection.transform.forward * runSpeed * 15 );
+		temp = cam.transform.position;			
+		PhysicalSpace.transform.position = cam.transform.position - camOffset; // blown to space
+		cam.transform.position = temp;*/
+    }
+    
+    void LoadSceneObjects()
+    {
+    	YOffset = 0;
+		YatLastFrame = 0;	
+		
 		PhysicalSpace = GameObject.Find("PhysicalSpace");
 		MoveDirection = GameObject.Find("MoveDirection");
 		basePos = PhysicalSpace.transform.position;
 		basePos.y -= PhysicalSpace.transform.lossyScale.y / 2;
 		cam = GameObject.Find("Main Camera");				
 		charController = cam.GetComponent<CharacterController>();
-		gun = GameObject.Find("M4");
+		gun = GameObject.Find("M4");    	
     }
 	
     void Tick()
