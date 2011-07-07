@@ -134,7 +134,7 @@ public class RootMotionCharacterControlZOMBIE: MonoBehaviour
 //		if (distance < 10)
 //			Debug.Log("Close zombie dist = " + distance);
 			
-		if (distance < 5 && mode == "running") {
+		if (distance < 7 && mode == "running") {
 			mode = "attacking";
 			Debug.Log("Attacking Player");
 			AttackPlayer();
@@ -163,7 +163,15 @@ public class RootMotionCharacterControlZOMBIE: MonoBehaviour
 		audio.Stop();
         audio.PlayOneShot(attackTracks[Random.Range(0,attackTracks.Length)]);        
                 
-        
+        MultiConnect multi = GameObject.Find("Multiplayer").GetComponent<MultiConnect>();	
+        if (multi.mode == "server") {
+			networkView.RPC ("killPlayer", RPCMode.All);	
+        }
+	}
+	
+	[RPC]
+	void killPlayer() 	
+	{
 		// The player dies
 		Debug.Log("Player killed by zombie!");
 		Death deathScript = GameObject.Find("ZombieOverlord").GetComponent<Death>();
@@ -250,7 +258,6 @@ public class RootMotionCharacterControlZOMBIE: MonoBehaviour
         animation.Stop();
 		//yield return new WaitForSeconds(3f);
 		yield return StartCoroutine(Wait(3.0f));
-		
 		Die();
 		
 		//Walk();
@@ -280,8 +287,15 @@ public class RootMotionCharacterControlZOMBIE: MonoBehaviour
 	}
 	
 	private void Die() {
-		ZombieOverlordScript overlordScript = GameObject.Find("ZombieOverlord").GetComponent<ZombieOverlordScript>();
-		overlordScript.deadZombie();
+		networkView.RPC ("updateOverlord", RPCMode.All);
 		Network.Destroy (gameObject);
+	}
+	
+	[RPC]
+	void updateOverlord() 	
+	{
+		Debug.Log("Received network notification of zombie death");
+		ZombieOverlordScript overlordScript = GameObject.Find("ZombieOverlord").GetComponent<ZombieOverlordScript>();		
+		overlordScript.deadZombie();
 	}
 }
